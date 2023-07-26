@@ -11,28 +11,29 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="RMCodeTest" customModuleProvider="target">
             <connections>
-                <outlet property="view" destination="c5k-yL-aWv" id="8jp-8n-dPy"/>
+                <outlet property="tableView" destination="0hY-Cq-8QZ" id="sI5-Tg-PVG"/>
+                <outlet property="view" destination="iN0-l3-epB" id="caf-ET-RMk"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="c5k-yL-aWv">
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
-            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Helloooo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Asb-SS-NBT">
-                    <rect key="frame" x="160.33333333333334" y="415.66666666666669" width="72.333333333333343" height="21"/>
-                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" estimatedSectionHeaderHeight="-1" sectionFooterHeight="28" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="0hY-Cq-8QZ">
+                    <rect key="frame" x="8" y="0.0" width="377" height="818"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </tableView>
             </subviews>
-            <viewLayoutGuide key="safeArea" id="6Ik-FF-wQG"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="Asb-SS-NBT" firstAttribute="centerX" secondItem="c5k-yL-aWv" secondAttribute="centerX" id="VHd-Y2-eyg"/>
-                <constraint firstItem="Asb-SS-NBT" firstAttribute="centerY" secondItem="c5k-yL-aWv" secondAttribute="centerY" id="dyR-wr-QH6"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="0hY-Cq-8QZ" secondAttribute="trailing" constant="8" id="B9n-GR-5wR"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="0hY-Cq-8QZ" secondAttribute="bottom" id="hHb-AQ-JCI"/>
+                <constraint firstItem="0hY-Cq-8QZ" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="qVx-ng-V4V"/>
+                <constraint firstItem="0hY-Cq-8QZ" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="8" id="tqa-DF-p5E"/>
             </constraints>
-            <point key="canvasLocation" x="7352" y="1382"/>
+            <point key="canvasLocation" x="139.69465648854961" y="20.422535211267608"/>
         </view>
     </objects>
     <resources>
