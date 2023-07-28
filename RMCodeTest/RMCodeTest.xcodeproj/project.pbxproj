@@ -21,6 +21,12 @@
 		4E322C502A71901100A51D08 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E322C4F2A71901100A51D08 /* HomeViewController.xib */; };
 		4E322C552A7190A100A51D08 /* CharacterCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E322C532A7190A100A51D08 /* CharacterCell.xib */; };
 		4E322C562A7190A100A51D08 /* CharacterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E322C542A7190A100A51D08 /* CharacterCell.swift */; };
+		4E429F742A743CEC00C77AEB /* CharacterDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E429F6E2A743CEC00C77AEB /* CharacterDetailViewController.swift */; };
+		4E429F752A743CEC00C77AEB /* CharacterDetailProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E429F6F2A743CEC00C77AEB /* CharacterDetailProtocols.swift */; };
+		4E429F762A743CEC00C77AEB /* CharacterDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E429F702A743CEC00C77AEB /* CharacterDetailViewController.xib */; };
+		4E429F772A743CEC00C77AEB /* CharacterDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E429F712A743CEC00C77AEB /* CharacterDetailViewModel.swift */; };
+		4E429F782A743CEC00C77AEB /* CharacterDetailBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E429F722A743CEC00C77AEB /* CharacterDetailBuilder.swift */; };
+		4E429F792A743CEC00C77AEB /* CharacterDetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E429F732A743CEC00C77AEB /* CharacterDetailRouter.swift */; };
 		4E52DDDF2A713EB600317B7B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E52DDDE2A713EB600317B7B /* AppDelegate.swift */; };
 		4E52DDE12A713EB600317B7B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E52DDE02A713EB600317B7B /* SceneDelegate.swift */; };
 		4E52DDE82A713EB800317B7B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4E52DDE72A713EB800317B7B /* Assets.xcassets */; };
@@ -72,6 +78,12 @@
 		4E322C4F2A71901100A51D08 /* HomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 		4E322C532A7190A100A51D08 /* CharacterCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CharacterCell.xib; sourceTree = "<group>"; };
 		4E322C542A7190A100A51D08 /* CharacterCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterCell.swift; sourceTree = "<group>"; };
+		4E429F6E2A743CEC00C77AEB /* CharacterDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterDetailViewController.swift; sourceTree = "<group>"; };
+		4E429F6F2A743CEC00C77AEB /* CharacterDetailProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterDetailProtocols.swift; sourceTree = "<group>"; };
+		4E429F702A743CEC00C77AEB /* CharacterDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CharacterDetailViewController.xib; sourceTree = "<group>"; };
+		4E429F712A743CEC00C77AEB /* CharacterDetailViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterDetailViewModel.swift; sourceTree = "<group>"; };
+		4E429F722A743CEC00C77AEB /* CharacterDetailBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterDetailBuilder.swift; sourceTree = "<group>"; };
+		4E429F732A743CEC00C77AEB /* CharacterDetailRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterDetailRouter.swift; sourceTree = "<group>"; };
 		4E52DDDB2A713EB600317B7B /* RMCodeTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RMCodeTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E52DDDE2A713EB600317B7B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4E52DDE02A713EB600317B7B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -143,6 +155,19 @@
 				4E322C532A7190A100A51D08 /* CharacterCell.xib */,
 			);
 			path = CharacterCell;
+			sourceTree = "<group>";
+		};
+		4E429F6D2A743CB300C77AEB /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				4E429F702A743CEC00C77AEB /* CharacterDetailViewController.xib */,
+				4E429F6E2A743CEC00C77AEB /* CharacterDetailViewController.swift */,
+				4E429F712A743CEC00C77AEB /* CharacterDetailViewModel.swift */,
+				4E429F722A743CEC00C77AEB /* CharacterDetailBuilder.swift */,
+				4E429F732A743CEC00C77AEB /* CharacterDetailRouter.swift */,
+				4E429F6F2A743CEC00C77AEB /* CharacterDetailProtocols.swift */,
+			);
+			path = Detail;
 			sourceTree = "<group>";
 		};
 		4E52DDD22A713EB600317B7B = {
@@ -235,8 +260,8 @@
 		4E52DE122A71422200317B7B /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				4E322C3E2A717CAB00A51D08 /* Repository */,
 				4E52DE1F2A71475700317B7B /* Datasource */,
+				4E322C3E2A717CAB00A51D08 /* Repository */,
 				4E52DE292A71492600317B7B /* DTO */,
 			);
 			path = Data;
@@ -283,6 +308,7 @@
 			isa = PBXGroup;
 			children = (
 				4E52DE182A71429200317B7B /* Home */,
+				4E429F6D2A743CB300C77AEB /* Detail */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -468,6 +494,7 @@
 				4E52DDEB2A713EB800317B7B /* LaunchScreen.storyboard in Resources */,
 				4E52DDE82A713EB800317B7B /* Assets.xcassets in Resources */,
 				4E322C502A71901100A51D08 /* HomeViewController.xib in Resources */,
+				4E429F762A743CEC00C77AEB /* CharacterDetailViewController.xib in Resources */,
 				4E322C552A7190A100A51D08 /* CharacterCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -499,6 +526,7 @@
 				4E322C562A7190A100A51D08 /* CharacterCell.swift in Sources */,
 				4E322C462A7181C300A51D08 /* HomeViewController.swift in Sources */,
 				4E322C4A2A71828B00A51D08 /* HomeBuilder.swift in Sources */,
+				4E429F752A743CEC00C77AEB /* CharacterDetailProtocols.swift in Sources */,
 				4E322C482A7181D900A51D08 /* HomeViewModel.swift in Sources */,
 				4E52DE2F2A714B0B00317B7B /* BaseViewController.swift in Sources */,
 				4E52DE282A71492000317B7B /* CharacterNetworkDatasource.swift in Sources */,
@@ -507,15 +535,19 @@
 				4E322C372A717A8D00A51D08 /* CacheManager.swift in Sources */,
 				4E52DE242A71480300317B7B /* CharacterDatasourceProtocol.swift in Sources */,
 				4E322C3B2A717ACD00A51D08 /* UIImageView.swift in Sources */,
+				4E429F792A743CEC00C77AEB /* CharacterDetailRouter.swift in Sources */,
 				4E52DDDF2A713EB600317B7B /* AppDelegate.swift in Sources */,
 				4E322C402A717CC500A51D08 /* CharacterRepository.swift in Sources */,
 				4E52DDE12A713EB600317B7B /* SceneDelegate.swift in Sources */,
 				4E52DE2D2A71494900317B7B /* Container.swift in Sources */,
 				4E52DE312A714B2300317B7B /* BuilderProtocol.swift in Sources */,
 				4E322C392A717AAD00A51D08 /* NetworkManager.swift in Sources */,
+				4E429F742A743CEC00C77AEB /* CharacterDetailViewController.swift in Sources */,
 				4E52DE1C2A7145B200317B7B /* CharacterUseCase.swift in Sources */,
 				4E52DE2B2A71493800317B7B /* PaginationDTO.swift in Sources */,
+				4E429F772A743CEC00C77AEB /* CharacterDetailViewModel.swift in Sources */,
 				4E322C422A717D0A00A51D08 /* Character.swift in Sources */,
+				4E429F782A743CEC00C77AEB /* CharacterDetailBuilder.swift in Sources */,
 				4E322C4C2A71829B00A51D08 /* HomeRouter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

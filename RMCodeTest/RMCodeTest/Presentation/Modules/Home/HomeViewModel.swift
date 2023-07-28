@@ -95,4 +95,8 @@ extension HomeViewModel {
             }
         }
     }
+
+    func goToDetail(character: Character) {
+        router.goToDetail(character: character)
+    }
 }
