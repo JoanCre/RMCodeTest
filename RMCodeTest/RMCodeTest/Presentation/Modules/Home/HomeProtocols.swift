@@ -5,6 +5,7 @@ protocol HomeBuilderProtocol: BuilderProtocol {
 }
 
 protocol HomeRouterProtocol {
+    // TODO: - Go to detail
 }
 
 protocol HomeViewModelProtocol: ViewModelProtocol {
@@ -13,8 +14,10 @@ protocol HomeViewModelProtocol: ViewModelProtocol {
     func viewDidDisappear()
 
     func loadMoreCharacter(currentItem: Int)
+    func search(this name: String)
     var characters: [Character] { get set }
     var hasNextPage: Bool { get set }
     var listCharactersUpdated: (() -> Void)? { get set }
     var errorHasOcurred: ((Error) -> Void)? { get set }
 }
+ 

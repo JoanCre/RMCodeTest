@@ -6,6 +6,19 @@ final class HomeViewModel: HomeViewModelProtocol {
     let router: HomeRouterProtocol
     var characterUseCase: CharacterUseCaseProtocol
 
+    enum Status {
+        case searching
+        case listing
+    }
+
+    var currentSearch: String = "" {
+        willSet {
+            if newValue == currentSearch { return }
+            hasNextPage = true
+            currentStatus = currentSearch.isEmpty ? .listing : .searching
+        }
+    }
+    var currentStatus: Status = .listing
     var characters = [Character]() {
         didSet {
             listCharactersUpdated?()
@@ -47,7 +60,7 @@ extension HomeViewModel {
         if !hasNextPage { return }
         Task {
             do {
-                let (characters, hasNextPage) = try await characterUseCase.getCharactersAndNextPageWhenSearching(for: page)
+                let (characters, hasNextPage) = try await characterUseCase.getCharactersAndNextPage(for: page)
                 self.characters.append(contentsOf: characters)
                 self.hasNextPage = hasNextPage
             } catch {
@@ -59,6 +72,27 @@ extension HomeViewModel {
     func loadMoreCharacter(currentItem: Int) {
         if (characters.count - 5 < currentItem) && hasNextPage {
             loadCharacters()
+        }
+    }
+
+    func search(this name: String) {
+        page = 1
+        characters.removeAll()
+        if name.isEmpty {
+            currentStatus = .listing
+            loadCharacters()
+            return
+        }
+        currentSearch = name
+        if !hasNextPage { return }
+        Task {
+            do {
+                let (characters, hasNextPage) = try await characterUseCase.getCharactersAndNextPageWhenSearching(this: name, for: page)
+                self.characters.append(contentsOf: characters)
+                self.hasNextPage = hasNextPage
+            } catch {
+                errorHasOcurred?(error)
+            }
         }
     }
 }

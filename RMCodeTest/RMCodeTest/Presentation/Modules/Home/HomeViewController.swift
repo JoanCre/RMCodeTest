@@ -7,6 +7,7 @@ final class HomeViewController: BaseViewController {
 
     // MARK: - Properties
     var viewModel: HomeViewModelProtocol!
+    lazy var searchBar: UISearchBar = UISearchBar()
 
     // MARK: - Life cycle
     override func viewDidLoad() {
@@ -30,6 +31,7 @@ final class HomeViewController: BaseViewController {
     // MARK: - Functions
     private func setupUI() {
         configure(this: tableView)
+        configureSearchBar()
     }
 }
 
@@ -61,3 +63,21 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         // TODO: - Go to detail
     }
 }
+
+// MARK: - SearchBar
+extension HomeViewController: UISearchBarDelegate {
+    private func configureSearchBar() {
+        searchBar.searchBarStyle = UISearchBar.Style.prominent
+        searchBar.placeholder = " Search..."
+        searchBar.sizeToFit()
+        searchBar.backgroundImage = UIImage()
+        searchBar.returnKeyType = .search
+        searchBar.delegate = self
+        navigationItem.titleView = searchBar
+    }
+
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        viewModel.search(this: searchText)
+    }
+}
+

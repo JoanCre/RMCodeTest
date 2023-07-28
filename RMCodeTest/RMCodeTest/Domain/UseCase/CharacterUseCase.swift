@@ -9,12 +9,18 @@ final class CharacterUseCase {
 }
 
 protocol CharacterUseCaseProtocol {
-    func getCharactersAndNextPageWhenSearching(for page: Int) async throws -> ([Character], Bool)
+    func getCharactersAndNextPage(for page: Int) async throws -> ([Character], Bool)
+    func getCharactersAndNextPageWhenSearching(this name: String, for page: Int) async throws -> ([Character], Bool)
 }
 
 extension CharacterUseCase: CharacterUseCaseProtocol {
-    func getCharactersAndNextPageWhenSearching(for page: Int) async throws -> ([Character], Bool) {
+    func getCharactersAndNextPage(for page: Int) async throws -> ([Character], Bool) {
         let pagination = try await repository.getCharactersAndNextPage(for: page)
+        return (pagination.characters, pagination.hasNextPage)
+    }
+    
+    func getCharactersAndNextPageWhenSearching(this name: String, for page: Int) async throws -> ([Character], Bool) {
+        let pagination = try await repository.getCharactersAndNextPageWhenSearch(this: name, for: page)
         return (pagination.characters, pagination.hasNextPage)
     }
 }
